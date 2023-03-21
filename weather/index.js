@@ -25,13 +25,12 @@ module.exports = async function (context, req) {
 	let temp_sl = weather_sl.data.main.temp
 
 	let response = {
-        "response_type": "in_channel", 
         "blocks": [
             {
                 "type": "section",
                 "text": {
                     "type": "mrkdwn",
-                    "text": `:flag-lk: : ${state_sl}, with a temperature of precisely ${temp_sl} degrees. \n :flag-no: : ${state_no}, with a temperature of precisely ${temp_no} degrees. \n Sri Lanka leads by ${temp_sl - temp_no} :blob_dance:`
+                    "text": `:flag-lk: : ${state_sl}, with a temperature of precisely ${temp_sl} degrees. \n :flag-no: : ${state_no}, with a temperature of precisely ${temp_no} degrees. \n Sri Lanka leads by ${Math.round(temp_sl - temp_no)} degrees :thermometer:`
                 }                       
             }
         ]
